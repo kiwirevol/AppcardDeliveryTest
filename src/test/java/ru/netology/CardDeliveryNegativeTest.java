@@ -33,7 +33,7 @@ public class CardDeliveryNegativeTest {
         $("[data-test-id=agreement]").click();
         $("[role=button] .button__content").click();
         $("[data-test-id='city'].input_invalid .input__sub").shouldBe(visible).
-                shouldHave(exactText("Поле обязательно для заполнения"));
+                shouldHave(exactText("Поле обязательно для заполнения")).shouldBe(visible);
     }
 
     // 2. Отправка заявки с городом не из административных центров субъектов РФ;
@@ -51,7 +51,7 @@ public class CardDeliveryNegativeTest {
         $("[data-test-id=agreement]").click();
         $("[role=button] .button__content").click();
         $("[data-test-id='city'].input_invalid .input__sub").shouldBe(visible).
-                shouldHave(exactText("Доставка в выбранный город недоступна"));
+                shouldHave(exactText("Доставка в выбранный город недоступна")).shouldBe(visible);
     }
 
     // 3. Отправка заявки с пустым полем "Дата встречи";
@@ -69,7 +69,7 @@ public class CardDeliveryNegativeTest {
         $("[data-test-id=agreement]").click();
         $("[role=button] .button__content").click();
         $("[data-test-id='date'] .input__sub").shouldBe(visible).
-                shouldHave(exactText("Неверно введена дата"));
+                shouldHave(exactText("Неверно введена дата")).shouldBe(visible);
     }
 
     // 4. Отправка заявки с пустым полем "Фамилия и Имя";
@@ -87,7 +87,7 @@ public class CardDeliveryNegativeTest {
         $("[data-test-id=agreement]").click();
         $("[role=button] .button__content").click();
         $("[data-test-id='name'].input_invalid .input__sub").shouldBe(visible)
-                .shouldHave(exactText("Поле обязательно для заполнения"));
+                .shouldHave(exactText("Поле обязательно для заполнения")).shouldBe(visible);
     }
 
     // 5. Отправка заявки с полем "Фамилия и Имя" на английском языке;
@@ -105,7 +105,7 @@ public class CardDeliveryNegativeTest {
         $("[data-test-id=agreement]").click();
         $("[role=button] .button__content").click();
         $("[data-test-id='name'].input_invalid .input__sub").shouldBe(visible)
-                .shouldHave(exactText("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы."));
+                .shouldHave(exactText("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы.")).shouldBe(visible);
     }
 
     // 6. Отправка заявки с полем "Фамилия и Имя", состоящий из цифр;
@@ -123,7 +123,7 @@ public class CardDeliveryNegativeTest {
         $("[data-test-id=agreement]").click();
         $("[role=button] .button__content").click();
         $("[data-test-id='name'].input_invalid .input__sub").shouldBe(visible)
-                .shouldHave(exactText("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы."));
+                .shouldHave(exactText("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы.")).shouldBe(visible);
     }
 
     // 7. Отправка заявки с полем "Фамилия и Имя", состоящий из спецсимволов;
@@ -141,7 +141,7 @@ public class CardDeliveryNegativeTest {
         $("[data-test-id=agreement]").click();
         $("[role=button] .button__content").click();
         $("[data-test-id='name'].input_invalid .input__sub").shouldBe(visible)
-                .shouldHave(exactText("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы."));
+                .shouldHave(exactText("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы.")).shouldBe(visible);
     }
 
     // 8. Отправка заявки с пустым полем "Мобильный телефон";
@@ -160,7 +160,7 @@ public class CardDeliveryNegativeTest {
         $("[data-test-id=agreement]").click();
         $("[role=button] .button__content").click();
         $("[data-test-id='phone'].input_invalid .input__sub").shouldBe(visible)
-                .shouldHave(exactText("Поле обязательно для заполнения"));
+                .shouldHave(exactText("Поле обязательно для заполнения")).shouldBe(visible);
     }
 
     // 9. Отправка заявки с введенным в поле "Мобильный телефон" букв;
@@ -178,7 +178,7 @@ public class CardDeliveryNegativeTest {
         $("[data-test-id=agreement]").click();
         $("[role=button] .button__content").click();
         $("[data-test-id='phone'].input_invalid .input__sub").shouldBe(visible)
-                .shouldHave(exactText("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678."));
+                .shouldHave(exactText("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678.")).shouldBe(visible);
     }
 
     // 10. Отправка заявки с введенным в поле "Мобильный телефон" спецсимволов;
@@ -196,7 +196,7 @@ public class CardDeliveryNegativeTest {
         $("[data-test-id=agreement]").click();
         $("[role=button] .button__content").click();
         $("[data-test-id='phone'].input_invalid .input__sub").shouldBe(visible)
-                .shouldHave(exactText("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678."));
+                .shouldHave(exactText("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678.")).shouldBe(visible);
     }
 
     // 11. Отправка заявки с неверно заполненным полем "Мобильный телефон", без "+";
@@ -214,7 +214,7 @@ public class CardDeliveryNegativeTest {
         $("[data-test-id=agreement]").click();
         $("[role=button] .button__content").click();
         $("[data-test-id='phone'].input_invalid .input__sub").shouldBe(visible)
-                .shouldHave(exactText("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678."));
+                .shouldHave(exactText("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678.")).shouldBe(visible);
     }
 
     // 12. Отправка заявки с введенным в поле "Мобильный телефон" неверного количества цифр;
@@ -232,7 +232,7 @@ public class CardDeliveryNegativeTest {
         $("[data-test-id=agreement]").click();
         $("[role=button] .button__content").click();
         $("[data-test-id='phone'].input_invalid .input__sub").shouldBe(visible)
-                .shouldHave(exactText("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678."));
+                .shouldHave(exactText("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678.")).shouldBe(visible);
     }
 
     // 13. Отправка заявки без согласия с условиями обработки персональных данных;
@@ -249,6 +249,6 @@ public class CardDeliveryNegativeTest {
         $("[data-test-id=phone] [type=tel]").setValue("+79883339918");
         $("[role=button] .button__content").click();
         $("[data-test-id='agreement'].input_invalid .checkbox__text").shouldBe(visible)
-                .shouldHave(exactText("Я соглашаюсь с условиями обработки и использования моих персональных данных"));
+                .shouldHave(exactText("Я соглашаюсь с условиями обработки и использования моих персональных данных")).shouldBe(visible);
     }
 }

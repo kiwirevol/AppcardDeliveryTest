@@ -9,6 +9,7 @@ import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -36,7 +37,7 @@ public class CardDeliveryPositiveTest {
         $("[role=button] .button__content").click();
         $(withText("Успешно!")).shouldBe(Condition.visible, Duration.ofMillis(15000));
         $("[data-test-id='notification'] .notification__content")
-                .shouldHave(Condition.exactText("Встреча успешно забронирована на " + dateText));
+                .shouldHave(Condition.exactText("Встреча успешно забронирована на " + dateText)).shouldBe(visible);
     }
 
     // 2. Отправка заявки с указанием фамилии через дефис;
@@ -55,7 +56,7 @@ public class CardDeliveryPositiveTest {
         $("[role=button] .button__content").click();
         $(withText("Успешно!")).shouldBe(Condition.visible, Duration.ofMillis(15000));
         $("[data-test-id='notification'] .notification__content")
-                .shouldHave(Condition.exactText("Встреча успешно забронирована на " + dateText));
+                .shouldHave(Condition.exactText("Встреча успешно забронирована на " + dateText)).shouldBe(visible);
     }
 
     // 3. Отправка заявки с указанием города через дефис;
@@ -74,6 +75,6 @@ public class CardDeliveryPositiveTest {
         $("[role=button] .button__content").click();
         $(withText("Успешно!")).shouldBe(Condition.visible, Duration.ofMillis(15000));
         $("[data-test-id='notification'] .notification__content")
-                .shouldHave(Condition.exactText("Встреча успешно забронирована на " + dateText));
+                .shouldHave(Condition.exactText("Встреча успешно забронирована на " + dateText)).shouldBe(visible);
     }
 }
